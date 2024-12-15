@@ -3,11 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Bill Form</title>
+    <style>
+h2 {
+    color: darkgrey;
+    text-align: center;
+    font-size: 50px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 8px 8px;
+    margin: 10px 0;
+}
+
+input[type=submit]{
+    width: 100%;
+    background-color: YellowGreen;
+    color: White;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 6px;
+
+}
+
+body {
+    background-color: GhostWhite;
+    padding: 20px;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h2>Bill Form</h2>
-<p>Fill in the form and press submit to calculate the payment amount between two flatmates</p>
-<form action="/result" method="post">
+<h2 class="text-center">Bill Form</h2>
+<p class="text-center">Fill in the form and press submit to calculate the payment amount between two flatmates</p>
+<form class="text-center" action="/result" method="post">
   {{bill_form.amount.label}} {{bill_form.amount}}<br><br>
   {{bill_form.period.label}} {{bill_form.period}}
   <hr>

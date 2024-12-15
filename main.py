@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 
 from flask.views import MethodView
@@ -41,16 +42,17 @@ class ResultPage(MethodView):
         report_generator.generate(flatmate1, flatmate2, bill)
         sharelink = FileSharer(filepath=f"{bill.period}.pdf", public_key=public_key, secret_key=secret_key).share()
 
-        return render_template("result.html",sharelink=sharelink)
+        return render_template("result.html",sharelink=sharelink,name1=flatmate1.name,name2=flatmate2.name,
+                               amount1=flatmate1.pays(bill, flatmate2),amount2=flatmate2.pays(bill, flatmate1))
 
 
 class BillForm(Form):
-    amount = StringField("Bill Amount:")
-    period = StringField("Bill Period: ")
-    name1 = StringField("Name: ")
-    days_in_house1 = StringField("Days in House: ")
-    name2 = StringField("Name: ")
-    days_in_house2 = StringField("Days in House: ")
+    amount = StringField("Bill Amount:",default="200")
+    period = StringField("Bill Period: ",default="January 2022")
+    name1 = StringField("Name: ",default="John")
+    days_in_house1 = StringField("Days in House: ",default="30")
+    name2 = StringField("Name: ",default="Jane")
+    days_in_house2 = StringField("Days in House: ",default="30")
     submit = SubmitField("Calculate")
 
 
