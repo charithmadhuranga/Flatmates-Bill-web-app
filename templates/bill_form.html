@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill Form</title>
+</head>
+<body>
+<h2>Bill Form</h2>
+<p>Fill in the form and press submit to calculate the payment amount between two flatmates</p>
+<form action="/result" method="post">
+  {{bill_form.amount.label}} {{bill_form.amount}}<br><br>
+  {{bill_form.period.label}} {{bill_form.period}}
+  <hr>
+  <p><b>First Flatmate</b></p>
+  {{bill_form.name1.label}} {{bill_form.name1}}<br><br>
+  {{bill_form.days_in_house1.label}} {{bill_form.days_in_house1}}<br><br>
+   <hr>
+  <p><b>Second Flatmate</b></p>
+  {{bill_form.name2.label}} {{bill_form.name2}}<br><br>
+  {{bill_form.days_in_house2.label}} {{bill_form.days_in_house2}}<br><br>
+  <br>
+  {{bill_form.submit}}
+</form>
+</body>
+</html>
