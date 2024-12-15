@@ -20,3 +20,6 @@ stating the names of the flatmates, the period, and how much each of them had to
 ### Design of the web ui
 
 ![design](flatmate_bills/files/design.drawio.png)
+![screen1](flatmate_bills/files/screen1.png)
+![screen2](flatmate_bills/files/screen2.png)
+![screen3](flatmate_bills/files/screen3.png)
